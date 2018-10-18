@@ -11,13 +11,13 @@
   In the example below, we are accessing the property values. Uncomment the code below, run it and look at what prints in the console.
 */
 
-// var values = {
-//   one: 'These',
-//   two: ' are',
-//   three: ' the',
-//   four: ' property',
-//   five: ' values.'
-// } 
+var values = {
+  one: 'These',
+  two: ' are',
+  three: ' the',
+  four: ' property',
+  five: ' values.'
+} 
 
 // for(var key in values) {
 //   console.log(values[key])
@@ -41,6 +41,11 @@
 
 function showValues( obj ) {
   //Code Here
+  var concate = '';
+  for(var props in obj){
+    concate += obj[props];
+  }
+  return concate
 }
 
 
@@ -55,6 +60,14 @@ function showValues( obj ) {
 
 //Code Here
 
+function greaterThan10(obj){
+  for( var val in obj){
+    if(obj[val] > 10){
+      obj[val] = 0;
+    }
+  }
+return obj
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -67,7 +80,12 @@ function showValues( obj ) {
 
 //Code Here
 
-
+function double(obj){
+  for(var val in obj){
+    obj[val] = obj[val]*2;
+  }
+  return obj;
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -81,7 +99,15 @@ function showValues( obj ) {
 
 //Code Here
 
-
+function secrets(obj){
+  var str = '';
+  for(var val in obj){
+    if(val.substring(0,2) === 'sh'){
+      str += obj[val]
+    }
+  }
+  return str;
+}
 
 /* 
   Sometimes it's needed to delete object properties. 
